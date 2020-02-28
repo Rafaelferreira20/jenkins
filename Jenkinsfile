@@ -1,13 +1,15 @@
 pipeline {
    agent {
       docker {
-         image "ruby"
+         image "ruby:alpine"
       }
    }
    stages {
       stage("Build") {
          steps {
-           sh "bundle install"
+            sh "chmod +x build/alpine.sh"
+            sh "./build/alpine.sh"
+            sh "bundle install"
          }
       }
       stage("Tests"){
