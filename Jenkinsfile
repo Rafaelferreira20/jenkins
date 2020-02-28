@@ -2,6 +2,7 @@ pipeline {
    agent {
       docker {
          image "ruby:alpine"
+         args "--network=webninja -u root --privileged"
       }
    }
    stages {
