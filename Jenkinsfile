@@ -1,15 +1,14 @@
 pipeline {
    agent {
       docker {
-         image "ruby:alpine"
+         image "ruby"
          args "--network=webninja -u root --privileged"
       }
    }
    stages {
       stage("Build") {
          steps {
-            sh "chmod +x build/alpine.sh"
-            sh "./build/alpine.sh"
+            sh "docker build"
             sh "bundle install"
          }
       }
