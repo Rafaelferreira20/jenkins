@@ -1,6 +1,5 @@
 apt-get update && \
-apt-get install build-base \
-    build-essential \
+apt-get install build-essential \
     libxml2-dev \
     libxslt-dev \
     postgresql-dev \
