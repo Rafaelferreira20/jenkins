@@ -8,6 +8,9 @@ pipeline {
    stages {
       stage("Build") {
          steps {
+            sh "chmod +x build/alpine.sh"
+            sh "docker exec -i -t ruby bash"
+            sh "./build/alpine.sh"
             sh "bundle install"
          }
       }
