@@ -25,3 +25,10 @@ Capybara.configure do |config|
   config.app_host = CONFIG["url"]
   config.default_max_wait_time = 10
 end
+
+Capybara.register_driver :chrome do |app|
+  chrome_binary = "/usr/bin/google-chrome"
+ 
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => { "binary" => chrome_binary, "args" => ['headless', 'disable-gpu', 'no-sandbox'] })
+  Capybara::Selenium::Driver.new(app, :browser => :chrome, :desired_capabilities => capabilities)
+end
