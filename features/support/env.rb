@@ -1,6 +1,6 @@
-require "capybara"
-require "capybara/cucumber"
-require "selenium-webdriver"
+require 'capybara'
+require 'capybara/cucumber'
+require 'selenium-webdriver'
 require "os"
 
 require_relative "helpers"
@@ -11,24 +11,17 @@ CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/#{ENV["ENV_T
 
 case ENV["BROWSER"]
 when "firefox"
-  @driver = :selenium
+    @driver = :selenium
 when "chrome"
-  @driver = :selenium_chrome
+    @driver = :selenium_chrome
 when "headless"
-  @driver = :selenium_chrome_headless
+    @driver = :selenium_chrome_headless
 else
-  puts "Invalid browser"
+    puts "Browser inválido!"
 end
 
 Capybara.configure do |config|
-  config.default_driver = @driver
-  config.app_host = CONFIG["url"]
-  config.default_max_wait_time = 10
-end
-
-Capybara.register_driver :chrome do |app|
-  chrome_binary = "/usr/bin/google-chrome"
- 
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => { "binary" => chrome_binary, "args" => ['headless', 'disable-gpu', 'no-sandbox'] })
-  Capybara::Selenium::Driver.new(app, :browser => :chrome, :desired_capabilities => capabilities)
+    config.default_driver = @driver
+    config.app_host = CONFIG["url"]
+    config.default_max_wait_time = 10
 end

@@ -1,5 +1,5 @@
 ---
-url: "http://localhost:8000"
+url: "http://homolog.com"
 database:
   host: "localhost"
   dbname: 'nflix' 
@@ -8,7 +8,4 @@ database:
 users:
   gestor:
     email: "sf.rafael20@gmail.com"
-    senha: "teste652"
-  admin:
-    email: "adminteste@gmail.com"
-    senha: "teste652"
+    pass: "teste652"

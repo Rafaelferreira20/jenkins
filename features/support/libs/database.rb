@@ -1,12 +1,19 @@
-require "pg"
+require 'pg'
 
 class Database
-  def initialize
-    conn = CONFIG["database"]
-    @connection = PG.connect(conn)
-  end
+    
+    def initialize
+        @connection = PG.connect(CONFIG['database'])
+    end
+    
+    def deleteMovie(titulo)
+        @connection.exec("DELETE from public.movies where title = '#{titulo}';")  
+    end
 
-  def delete_movie(title)
-    @connection.exec("DELETE from public.movies where title = '#{title}';")
-  end
+    def insertMovie(movie)    
+        sql = "INSERT INTO public.movies(title, status, year, release_date, created_at, updated_at)" \
+                        " VALUES('#{movie['titulo']}', '#{movie['status']}', '#{movie['ano']}', '#{movie['lancamento']}', current_timestamp, current_timestamp);"
+        @connection.exec(sql)
+    end
+    
 end

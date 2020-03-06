@@ -1,22 +1,35 @@
-class MoviePage < BasePage
-  def initialize
-    @movie_list = "table tbody tr"
-  end
+class MoviePage
+    include Capybara::DSL
 
-  def search(title)
-    find("input[placeholder^=Pesquisar]").set title
-    find("#search-movie").click
-  end
+    def initialize
+        @listaFilmes = "table tbody tr"
+    end
 
-  def alert
-    find(".alert").text
-  end
+    def add
+        find('.nc-simple-add').click
+    end
 
-  def list
-    all(@movie_list)
-  end
+    def form
+        MovieAdd.new
+    end
 
-  def has_movie(title)
-    page.has_css?(@movie_list, text: title)
-  end
+    def sweet_alert
+        SweetAlert.new
+    end
+
+    def linhaFilme(titulo)
+        find(@listaFilmes, text: titulo)
+    end
+
+    def removeFilme(titulo)
+        linhaFilme(titulo).find('.btn-trash').click
+    end
+    
+    def filmeExcluido(titulo)
+        page.has_no_css?(@listaFilmes, text: titulo)
+    end
+
+    def temFilme(titulo)
+        page.has_css?(@listaFilmes, text: titulo)
+    end
 end

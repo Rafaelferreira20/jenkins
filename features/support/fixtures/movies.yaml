@@ -1,0 +1,81 @@
+---
+ultimato:
+  titulo: "Vingadores Ultimato"
+  status: "Disponível"
+  ano: 2019
+  lancamento: "24/04/2019"
+  atores: ["Robert Downey Jr", "Chries Evans"]
+  sinopse: "Teste de Sinopse"
+  capa: "ultimato.jpg"
+spider:
+  titulo: "Homem Aranha longe de casa"
+  status: "Pré-venda"
+  ano: 2019
+  lancamento: "04/07/2019"
+  atores: ["Tom Holland", "Samuel L Jackson"]
+  sinopse: "Peter Parker resolvendo umas tretas na viagem pela Europa"
+  capa: "spider.jpg"
+coringa:
+  titulo: "Coringa"
+  status: "Em breve"
+  ano: 2019
+  lancamento: "04/07/2019"
+  atores: ["Joaquin Phoenix"]
+  sinopse: "O comediante falido Arthur Fleck encontra bandidos violentos"
+  capa: "coringa.jpg"
+deadpool2:
+  titulo: "Deadpool 2"
+  status: "Disponível"
+  ano: 2018
+  lancamento: "01/05/2018"
+  atores: ["Ryan Reynolds"]
+  sinopse: ""
+  capa: "dp2.jpg"
+dbz:
+  titulo: "Dragon ball Evolution"
+  status: "Disponível"
+  ano: 2009
+  lancamento: "10/07/2009"
+  atores: []
+  sinopse: ""
+  capa: "dbz.jpg"
+10_coisas:
+  titulo: "10 Coisas que eu odeio em você"
+  status: "Disponível"
+  ano: 1999
+  lancamento: "10/07/1999"
+  atores: []
+  sinopse: ""
+  capa: "10-coisas.jpg"
+semTitulo:
+  titulo: ""
+  status: "Em breve"
+  ano: 2019
+  lancamento: "04/07/2019"
+  atores: []
+  sinopse: ""
+  capa: ""
+semStatus:
+  titulo: "Coringa"
+  status: ""
+  ano: 2019
+  lancamento: "04/07/2019"
+  atores: []
+  sinopse: ""
+  capa: ""
+semAno:
+  titulo: "Coringa"
+  status: "Em breve"
+  ano: 
+  lancamento: "04/07/2019"
+  atores: []
+  sinopse: ""
+  capa: ""
+semData:
+  titulo: "Coringa"
+  status: "Em breve"
+  ano: 2019
+  lancamento: ""
+  atores: []
+  sinopse: ""
+  capa: ""

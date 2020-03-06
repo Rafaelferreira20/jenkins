@@ -1,15 +1,21 @@
-class LoginPage < BasePage
-  def go
-    visit "/"
-  end
+class LoginPage
+    include Capybara::DSL
 
-  def with(email, pass)
-    find("input[name=email]").set email
-    find("input[name=password]").set pass
-    click_button "Entrar"
-  end
+    def go
+        visit '/'
+    end
 
-  def alert
-    find(".alert").text
-  end
+    def logar(email, senha)
+        # find('#emailId')
+        find('input[name=email]').set email
+
+        # find('#passId')
+        find('input[name=password').set senha
+
+        click_button 'Entrar'
+    end
+
+    def alert
+        find('.alert span').text
+    end
 end
