@@ -1,5 +1,6 @@
 #language: pt
 
+@login
 Funcionalidade: login
     Para que eu possa gerenciar os filmes do catálago NinjaFlix
     Sendo um usuário previamente cadastrado
