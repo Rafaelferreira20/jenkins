@@ -14,9 +14,12 @@ Before('@login') do
 end
 
 After do |scenario|
-    # if scenario.failed?
-        tempShot = page.save_screenshot("log/tempShot.png")
-        screeshot = Base64.encode64(File.open(tempShot).read)
-        embed(screeshot, "image/png", "Print_da_tela")
-    # end
+
+    screeshot = page.save_screenshot("log/screenshot/#{scenario.__id__}.png")
+    embed(screeshot, "image/png", "Screenshot")
+
+    # relatório local
+    # tempShot = page.save_screenshot("log/tempShot.png")
+    # screeshot = Base64.encode64(File.open(tempShot).read)
+    # embed(screeshot, "image/png", "Print_da_tela")
 end
