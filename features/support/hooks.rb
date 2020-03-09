@@ -14,9 +14,8 @@ Before('@login') do
 end
 
 After do |scenario|
-
-    screeshot = page.save_screenshot("log/screenshot/#{scenario.__id__}.png")
-    embed(screeshot, "image/png", "Screenshot")
+    screenshot = page.save_screenshot("log/screenshot/#{scenario.__id__}.png")
+    embed(screenshot, "image/png", "Screenshot")
 
     # relatório local
     # tempShot = page.save_screenshot("log/tempShot.png")
