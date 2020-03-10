@@ -1,6 +1,6 @@
-require 'capybara'
-require 'capybara/cucumber'
-require 'selenium-webdriver'
+require "capybara"
+require "capybara/cucumber"
+require "selenium-webdriver"
 require "os"
 
 require_relative "helpers"
@@ -26,11 +26,11 @@ when "headless"
   end
   @driver = :selenium_chrome_headless
 else
-    puts "Browser inválido!"
+  puts "Invalid browser"
 end
-
+  
 Capybara.configure do |config|
-    config.default_driver = @driver
-    config.app_host = CONFIG["url"]
-    config.default_max_wait_time = 10
+  config.default_driver = @driver
+  config.app_host = CONFIG["url"]
+  config.default_max_wait_time = 10
 end
